@@ -1,0 +1,31 @@
+﻿@model List<Category>
+
+<h1>Category List</h1>
+<!--create table html-->
+<table class="table table-bordered table-striped"> 
+    <thead>
+    <tr>
+        <th>
+            Category Name 
+        </th>
+        <th>
+            Display Order
+        </th>
+    </tr>
+    </thead>
+<!-- use at mark write c# retruve datafrom category controller where they retrive datat from sql
+    td for data cell for loop display property 
+-->
+    <tbody>
+        @foreach(var obj in Model.OrderBy(u => u.DisplayOrder))
+        {
+        <tr>
+            <td>@obj.Name</td>
+            <td>
+                @obj.DisplayOrder
+            </td>
+        </tr>
+        }
+        
+    </tbody>
+</table>
